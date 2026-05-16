@@ -11,9 +11,9 @@ At its core, AI Pro acts as a framework to unite `data sources`, `models` and `s
 		- Twitter's Streaming API
 		- CSV files
 		- Image streams 
-	- Models types:
+	- Model types:
 		- Custom models (Tensorflow, Keras, Scikit-Learn, and more)
-	- Storage types
+	- Storage types:
 		- MongoDB
 		- Flat files
 
@@ -27,7 +27,7 @@ git clone https://github.com/InitialDLab/AIPro.git
 ``
 
 2. Install dependencies
-	- Use Docker and Rabbit MQ for the message processing
+	- Use Docker and RabbitMQ for the message processing
 		- `./docker-ubuntu.sh`
 		- `./run.sh`	
 	- Installing Python dependencies
@@ -38,7 +38,7 @@ git clone https://github.com/InitialDLab/AIPro.git
 	- Run AI Pro
 		- `python main.py -c examples/sentiment-analysis/config-rawfile.yml`
 	- Output
-		- JSON file contaiining tweets with sentiment scores 
+		- JSON file containing tweets with sentiment scores 
 		- `examples/sentiment-analysis/tweets-with-sentiment.json`
 4. To stop
 	- `ctrl+c` or `SIGKILL`
@@ -64,7 +64,7 @@ git clone https://github.com/InitialDLab/AIPro.git
 2. Install dependencies
     - Install Messaging Interface 
         - We use RabbitMQ
-        - Start a RabbitMQ server instance, preferably your local machine.
+        - Start a RabbitMQ server instance, preferably on your local machine.
 	    - If you don't have RabbitMQ installed, we highly recommend using [Docker](https://hub.docker.com/_/rabbitmq/). We provide a script `docker-ubuntu.sh` to install docker on Ubuntu 16.04.  
         - Once you have Docker installed, the `run.sh` script in this directory will start RabbitMQ with the proper settings.
     - Install Python virtual environment and core dependencies (Note: It uses `python2.7` right now. )
@@ -74,7 +74,7 @@ git clone https://github.com/InitialDLab/AIPro.git
     - An example can be found at `examples/sentiment-analysis/config-rawfile.yml`
 4. Install all the Python requirements specific to your models, data sources and storage methods within the same virtual environment that was created in step 2.
 	- Example: `source venv/bin/activate && pip install -r examples/sentiment-analysis/requirements.txt`.
-	- The directory `venv` resides in the `AIPro/` folder contains all the python dependency packages.
+	- The directory `venv` resides in the `AIPro/` folder and contains all the python dependency packages.
 5. To run AI Pro 
     - Make sure you are in the same virtual environment.
     - `python main.py -c config-file`, where config-file is the location of the config file you created in step 3.
